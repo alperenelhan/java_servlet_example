@@ -1,4 +1,4 @@
-package webService.org.elhan;
+package webService;
 
 import java.io.BufferedReader;
 import java.io.IOException;

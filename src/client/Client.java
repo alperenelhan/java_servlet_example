@@ -43,8 +43,7 @@ public class Client {
 			while ((line = reader.readLine()) != null) {
 				answer.append(line);
 			}
-			//pw.println(handler.unmarshal(answer.toString(), Command.class));
-			pw.println(answer.toString());
+			pw.println(handler.unmarshal(answer.toString(), Command.class));
 		}
 		pw.close();
 	}
