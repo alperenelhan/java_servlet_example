@@ -3,7 +3,6 @@ package webService;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.charset.Charset;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -25,6 +24,9 @@ public class Servlet extends HttpServlet {
 			answer.append(line);
 		}
 		try {
+			if (answer.toString() == null || answer.toString().isEmpty()) {
+				return;
+			}
 			out.write(ops.exec(answer.toString()));
 		} catch (Exception e) {
 			e.printStackTrace();
