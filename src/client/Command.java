@@ -7,49 +7,49 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "ogrenciIslemleri")
 public class Command {
-	
+
 	@XmlElement(name = "islem")
 	private String _name;
-	
+
 	@XmlElement(name = "ogrNo")
 	private String _personId;
-	
+
 	@XmlElement(name = "dogumTar")
 	private String _date;
-	
+
 	@XmlElement(name = "adSoyad")
 	private String _person;
-	
+
 	@XmlElement(name = "cevap")
 	private String _response;
-	
+
 	@XmlElement(name = "ogrenci")
 	private ArrayList<Person> _data;
-	
+
 	public Command() {
 		_data = new ArrayList<Person>();
 	}
-	
-	public Command(String personId){
+
+	public Command(String personId) {
 		_data = new ArrayList<Person>();
 		_personId = personId;
 	}
-	
+
 	public Command(String personId, String person, String date) {
 		_data = new ArrayList<Person>();
 		_person = person;
 		_personId = personId;
 		_date = date;
 	}
-	
+
 	@Override
 	public String toString() {
 		String str = "";
 		if (_name != null) {
-			str = _name; 
+			str = _name;
 		}
 		if (_personId != null) {
-			str += " " + _personId; 
+			str += " " + _personId;
 		}
 		if (_person != null) {
 			str += " " + _person;
@@ -58,7 +58,7 @@ public class Command {
 			str += " " + _date;
 		}
 		if (_response != null) {
-			str += " " + _response; 
+			str += " " + _response;
 		}
 		if (_data != null && _data.size() != 0) {
 			for (Person p : _data) {
@@ -67,7 +67,6 @@ public class Command {
 		}
 		return str.trim();
 	}
-	
 
 	public String name() {
 		return _name;
@@ -76,7 +75,7 @@ public class Command {
 	public void name(String name) {
 		_name = name;
 	}
-	
+
 	public String personId() {
 		return _personId;
 	}
@@ -84,7 +83,7 @@ public class Command {
 	public void personId(String personId) {
 		_personId = personId;
 	}
-	
+
 	public String date() {
 		return _date;
 	}
@@ -92,7 +91,7 @@ public class Command {
 	public void date(String date) {
 		_date = date;
 	}
-	
+
 	public ArrayList<Person> data() {
 		return _data;
 	}
@@ -100,7 +99,7 @@ public class Command {
 	public void data(ArrayList<Person> data) {
 		_data = data;
 	}
-	
+
 	public String person() {
 		return _person;
 	}
